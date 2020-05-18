@@ -9,10 +9,12 @@ html, .page {
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    color: #959595;
+    background-image: url('images/Backgroung.jpg');
+    background-repeat: no-repeat;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*width: 100%;*/
+    /*color: #959595;*/
     font: normal 12px/2.0em Sans-Serif;
 }
 
