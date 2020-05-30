@@ -1,0 +1,44 @@
+table {
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 50px;
+border-collapse: collapse;
+border-spacing: 0;
+width: 80%;
+border: 1px solid orangered;
+}
+
+th {
+    font-size: medium;
+}
+
+td {
+    font-size: small;
+    color:  crimson;
+}
+
+th, td {
+text-align: center;
+padding: 20px;
+}
+
+th:first-child, td:first-child {
+text-align: left;
+color: black;
+}
+
+
+@font-face {
+    font-family: "myFont";
+    src: url(../fonts/Oswald-VariableFont_wght.ttf);
+}
+
+.game-name td {
+    color: black;
+    font-family: myFont;
+    font-size: large;
+}
+
+tr:nth-child(even) {
+background-color: #f2f2f2
+}
