@@ -5,6 +5,12 @@
         <div class="row">
 
             <div class="column-contact">
+            <?php  echo validation_errors(); ?>
+            <?php if($this->session->flashdata('wrong_data')){?>
+                <div class="alert alert-danger">
+                    <?php echo $this->session->flashdata('wrong_data');?>
+                </div>
+            <?php }?>
 
                 <form method="post" action="#">
 

@@ -19,15 +19,15 @@
 
     //login modal of client-side home page
     public function get_current_username($email){
-      $this->db->where('email',$email);
-      $query = $this->db->get('login');
+      $this->db->where('u_email',$email);
+      $query = $this->db->get('user');
       return $query->row();
     }
     public function login_processes($data)
     {
-      $this->db->where('email',$data['email']);
-      $this->db->where('password',$data['password']);
-      $query = $this->db->get('login');
+      $this->db->where('u_email',$data['email']);
+      $this->db->where('u_pass',$data['password']);
+      $query = $this->db->get('user');
       return $query->row();
     }
     //addition of product in view section
