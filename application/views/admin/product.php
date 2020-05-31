@@ -1,15 +1,26 @@
 <?php $this->load->view('admin/admin_inc/admin_header.php'); ?>
 
-  <div class="offset-md-2 col-md-10">
-    <div class="wrap ml-4">
-      <div class="container p-1">
+  <div class="offset-md-2 col-md-9">
+    <div class="wrap ml-5 p-3">
+      <div class="container p-3">
         <h2>Product</h2>
       </div>
 
-      <form class="" action="<?php base_url(); ?>product" method="post" enctype="multipart/form-data">
+      <form class="" action="<?php echo base_url(); ?>index.php/admin/product" method="post" enctype="multipart/form-data">
       <div class="row ml-2">
         <div class="col-md-8">
           <h5>Add Item</h5>
+          <?php  echo validation_errors(); ?>
+          <?php if($this->session->flashdata('wrong_data')){?>
+            <div class="alert alert-danger">
+                <?php echo $this->session->flashdata('wrong_data');?>
+            </div>
+          <?php }?>
+          <?php if($this->session->flashdata('no_email')){?>
+            <div class="alert alert-danger">
+                <?php echo $this->session->flashdata('no_email');?>
+            </div>
+          <?php }?>
           <div class="form-group">
             <label for="exampleInput1">Product name</label>
             <input name="pname" type="text" class="form-control rounded-0" id="exampleInputEmail1" aria-describedby="Help" placeholder="Enter product name">
@@ -23,10 +34,10 @@
             <textarea name="pdetail" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="5"></textarea>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="row ml-5">
-            <div class="card w-100 mr-3">
-              <div class="card-header">
+        <div class="col-md-4 p-2">
+          <div class="row ml-3">
+            <div class="card">
+              <div class="card-header p-2">
                 Product Image
               </div>
               <div class="card-body">
@@ -34,32 +45,9 @@
               </div>
             </div>
           </div>
-          <div class="row ml-5">
-            <div class="card w-100 mr-3">
-              <div class="card-header">
-                Product Gallery
-              </div>
-              <div class="card-body">
-                <a href="#">Add product gallery images</a>
-              </div>
-            </div>
-          </div>
-          <div class="row ml-5">
-            <div class="card w-100 mr-3">
-              <div class="card-header">
-                Select category
-              </div>
-              <div class="card-body">
-                <label class="container">
-                  <input type="checkbox" aria-label="Checkbox for following text input">
-                  First category edited
-                </label>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="col-md-8 pr-3">
+        <div class="col-md-8">
           <div class="row accordion" id="accordionExample">
             <div class="card col-md-4">
               <h5 style="padding: 20px 2px; font-family: 'Roboto'; font-weight: 500; font-size: 16px;">Product data</h5>
@@ -70,22 +58,12 @@
               </div>
               <div class="card-header" id="headingTwo">
                 <h5 class=""><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Invertory
+                    Requirements(mini)
                   </button>  </h5>
               </div>
               <div class="card-header" id="headingThree">
                 <h5 class="">  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Shipping
-                  </button></h5>
-              </div>
-              <div class="card-header" id="headingFour">
-                <h5 class=""><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
-                    Linked Products
-                  </button></h5>
-              </div>
-              <div class="card-header" id="headingfive">
-                <h5 class=""><button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
-                    Advanced
+                    Requirements(recom.)
                   </button></h5>
               </div>
             </div>
@@ -95,30 +73,24 @@
                 <div class="card-body">
                   <div class="form-group-inline" id="general">
                     <div class="form-group row mb-3">
-                      <input class="form-control" type="text" placeholder=" --select category-- ">
+                      <input class="form-control" type="text" placeholder="type">
                     </div>
                     <div class="form-group row">
-                      <label for="inputr" class="col-md-4 col-form-label">Regular Price</label>
+                      <label for="inputr" class="col-md-4 col-form-label">Edition</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="regular-price" placeholder="Regular Price">
+                        <input type="text" class="form-control" name="edition" placeholder="Edition">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputs" class="col-md-4 col-form-label">Sale Price</label>
+                      <label for="inputs" class="col-md-4 col-form-label">Platform</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="sale-price" placeholder="Sale Price">
+                        <input type="text" class="form-control" name="platform" placeholder="Platform">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputs" class="col-md-4 col-form-label">Discount</label>
+                      <label for="inputs" class="col-md-4 col-form-label">Release Date</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="discount" placeholder="Discount">
-                      </div>
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputs" class="col-md-4 col-form-label">Total</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="totalprice" placeholder="Total">
+                        <input type="text" class="form-control" name="rrelease" placeholder="Release Date">
                       </div>
                     </div>
                   </div>
@@ -126,20 +98,38 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                 <div class="card-body">
-                  <div class="form-group-inline" id="shipping">
+                  <div class="form-group-inline" id="minimum">
                     <div class="form-group row mb-3">
-                      <input class="form-control" type="text" placeholder=" --select category-- ">
+                      <input class="form-control" type="text" name="mos" placeholder=" --OS-- ">
                     </div>
                     <div class="form-group row">
-                      <label for="inputr" class="col-md-4 col-form-label">Regular Price</label>
+                      <label for="inputr" class="col-md-4 col-form-label">Processor</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="static">
+                        <input type="text" class="form-control" name="mprocessor">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputs" class="col-md-4 col-form-label">Sale Price</label>
+                      <label for="inputs" class="col-md-4 col-form-label">Graphics</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="input" placeholder="">
+                        <input type="text" class="form-control" name="mgraphics" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputs" class="col-md-4 col-form-label">System RAM</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="mram" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputs" class="col-md-4 col-form-label">Resoltuion</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="mresoltuion" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputs" class="col-md-4 col-form-label">Vnameeo Preset</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="mvideo" placeholder="">
                       </div>
                     </div>
                   </div>
@@ -147,53 +137,38 @@
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-                  <div class="form-group row">
-                    <div class="col-sm-6">  <select class="form-control" id="select-country"></select> </div>
-                    <div class="col-sm-6">  <select class="form-control" id="select-states"></select> </div>
-                  </div>
-                  <div class="form-group row">
-                    <div class="col-sm-6">  <select class="form-control" id="select-city" placeholder="select city"></select> </div>
-                    <div class="col-sm-6">  <input class="form-control" type="text" placeholder=" --postal code-- "> </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="inputr" class="col-md-5 col-form-label">Shipping charges</label>
-                    <div class="col-sm-7">
-                      <input type="text" class="form-control" id="static">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                <div class="card-body">
-                  <div class="form-group-inline" id="linked-products">
+                <div class="form-group-inline" id="recommended">
                     <div class="form-group row mb-3">
-                      <input class="form-control" type="text" placeholder=" --select category-- ">
+                      <input class="form-control" type="text" name="ros" placeholder=" --OS-- ">
                     </div>
                     <div class="form-group row">
-                      <label for="inputr" class="col-md-4 col-form-label">Regular Price</label>
+                      <label for="inputr" class="col-md-4 col-form-label">Processor</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="static">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                <div class="card-body">
-                  <div class="form-group-inline" id="shipping">
-                    <div class="form-group row mb-3">
-                      <input class="form-control" type="text" placeholder=" --select category-- ">
-                    </div>
-                    <div class="form-group row">
-                      <label for="inputr" class="col-md-4 col-form-label">Regular Price</label>
-                      <div class="col-sm-8">
-                        <input type="text" class="form-control" id="static">
+                        <input type="text" class="form-control" name="rprocessor">
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputs" class="col-md-4 col-form-label">Sale Price</label>
+                      <label for="inputs" class="col-md-4 col-form-label">Graphics</label>
                       <div class="col-sm-8">
-                        <input type="text" class="form-control" id="input" placeholder="">
+                        <input type="text" class="form-control" name="rgraphics" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputs" class="col-md-4 col-form-label">System RAM</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="rram" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputs" class="col-md-4 col-form-label">Resoltuion</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="rresoltuion" placeholder="">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="inputs" class="col-md-4 col-form-label">Vnameeo Preset</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="rvideo" placeholder="">
                       </div>
                     </div>
                   </div>
@@ -230,7 +205,7 @@
   };
 </script> -->
 
-<script>
+<!-- <script>
   $('#sale-price').keyup(function() {
     updateTotal();
   });
@@ -244,10 +219,10 @@
       $('#totalprice').val((input1 * input2)/100);
     }
   }
-</script>
+</script> -->
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var country = ['--select country--','india','china','japan'];
   var states = [];
   states['--select country--']=[];
@@ -290,4 +265,4 @@
       alert('please select a state first');
     }
   });
-</script>
+</script> -->

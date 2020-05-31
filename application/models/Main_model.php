@@ -6,14 +6,14 @@
     //login code of admin panel
     public function get_admin_email($email){
       $this->db->where('email',$email);
-      $query = $this->db->get('login');
+      $query = $this->db->get('admin');
       return $query->row();
     }
     public function login_process($data)
     {
       $this->db->where('email',$data['email']);
       $this->db->where('password',$data['password']);
-      $query = $this->db->get('login');
+      $query = $this->db->get('admin');
       return $query->row();
     }
 

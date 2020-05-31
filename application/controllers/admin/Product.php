@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class product extends CI_Controller {
+class Product extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -22,12 +22,28 @@ class product extends CI_Controller {
  {
    parent::__construct();
    $this->load->model('Mymodel');
+   $this->load->model('Main_model');
    $this->load->library('form_validation');
  }
  public function index(){
    $this->form_validation->set_rules('pname','productname','required');
    $this->form_validation->set_rules('price','productprice','required');
    $this->form_validation->set_rules('pdetail','description','required');
+   $this->form_validation->set_rules('edition','edition','required');
+   $this->form_validation->set_rules('platform','platform','required');
+   $this->form_validation->set_rules('rrelease','release','required');
+   $this->form_validation->set_rules('mos','mos','required');
+   $this->form_validation->set_rules('mprocessor','mprocessor','required');
+   $this->form_validation->set_rules('mgraphics','mgraphics','required');
+   $this->form_validation->set_rules('mram','mram','required');
+   $this->form_validation->set_rules('mresoltuion','mresoltuion','required');
+   $this->form_validation->set_rules('mvideo','mvideo','required');
+   $this->form_validation->set_rules('ros','ros','required');
+   $this->form_validation->set_rules('rprocessor','rprocessor','required');
+   $this->form_validation->set_rules('rgraphics','rgraphics','required');
+   $this->form_validation->set_rules('rram','rram','required');
+   $this->form_validation->set_rules('rresoltuion','rresoltuion','required');
+   $this->form_validation->set_rules('rvideo','rvideo','required');
 
    if($this->form_validation->run()==false){
      $this->load->view('admin/product');
@@ -61,14 +77,29 @@ class product extends CI_Controller {
 
 
        $data=array(
-                   'productname' =>$this->input->post('pname'),
-                   'product_price' =>$this->input->post('price'),
-                   'product_detail' => $this->input->post('pdetail'),
-                   'picture' => $product_image,
+                   'pro_name' =>$this->input->post('pname'),
+                   'pro_price' =>$this->input->post('price'),
+                   'pro_details' => $this->input->post('pdetail'),
+                   'pro_pic' => $product_image,
+                   'edition' =>$this->input->post('edition'),
+                   'platform' =>$this->input->post('platform'),
+                   'rrelease' =>$this->input->post('rrelease'),
+                   'mos' => $this->input->post('mos'),
+                   'mprocessor' =>$this->input->post('mprocessor'),
+                   'mgraphics' =>$this->input->post('mgraphics'),
+                   'mram' => $this->input->post('mram'),
+                   'mresoltuion' =>$this->input->post('mresoltuion'),
+                   'mvideo' =>$this->input->post('mvideo'),
+                   'ros' => $this->input->post('ros'),
+                   'rprocessor' =>$this->input->post('rprocessor'),
+                   'rgraphics' =>$this->input->post('rgraphics'),
+                   'rram' => $this->input->post('rram'),
+                   'rresoltuion' =>$this->input->post('rresoltuion'),
+                   'rvideo' =>$this->input->post('rvideo'),
 
        );
        $data['add']=$this->Mymodel->insert_product($data);
-       redirect('admin/product'.$this->session->set_flashdata('add','Signup Completed'));
+       redirect('admin/productlist'.$this->session->set_flashdata('add','Signup Completed'));
    }
  }
 }
