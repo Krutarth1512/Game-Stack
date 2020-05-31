@@ -1,0 +1,19 @@
+
+.card-body a,label{
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.card-body{
+  padding-left: 20px;
+  padding-top: 10px;
+}
+.category-bar{
+  background-color: #D4D4D4;
+}
+
+.card-header{
+    padding: 3px;
+    /* margin: 0px -16px; */
+}
