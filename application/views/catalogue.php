@@ -3,8 +3,22 @@
         <div class="feature"></div>
 
         <div class="row" style="padding-top: 20px;">
-
+            <?php if(!empty($products)){?>
+            <?php foreach($products as $p ){?>
             <div class="columnCatalogue">
+                
+                <a href="product3.html" style="text-decoration: none;">
+
+                    <img src="<?php echo base_url(); ?>uploads/<?php echo $p->pro_pic; ?>" width="60%" title="Assassin's Creed Odyssey" class="center">
+                    <h2 class="center"><?php echo $p->pro_name; ?>y</h2>
+
+                </a>
+
+            </div>
+            <?php } ?>
+            <?php } ?>
+
+            <!-- <div class="columnCatalogue">
                 
                 <a href="product3.html" style="text-decoration: none;">
 
@@ -13,7 +27,7 @@
 
                 </a>
 
-            </div>
+            </div> -->
             
             <div class="columnCatalogue">
 

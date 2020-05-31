@@ -29,6 +29,7 @@ class Product extends CI_Controller {
    $this->form_validation->set_rules('pname','productname','required');
    $this->form_validation->set_rules('price','productprice','required');
    $this->form_validation->set_rules('pdetail','description','required');
+   $this->form_validation->set_rules('type','type','required');
    $this->form_validation->set_rules('edition','edition','required');
    $this->form_validation->set_rules('platform','platform','required');
    $this->form_validation->set_rules('rrelease','release','required');
@@ -82,6 +83,7 @@ class Product extends CI_Controller {
                    'pro_details' => $this->input->post('pdetail'),
                    'pro_pic' => $product_image,
                    'edition' =>$this->input->post('edition'),
+                   'type' =>$this->input->post('type'),
                    'platform' =>$this->input->post('platform'),
                    'rrelease' =>$this->input->post('rrelease'),
                    'mos' => $this->input->post('mos'),

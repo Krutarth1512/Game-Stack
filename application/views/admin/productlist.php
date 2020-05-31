@@ -2,11 +2,11 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <section class="content">
+        <section class="content p-3">
           <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
               <div class="card">
-                <div class="card-header">
+                <div class="card-header p-4">
                   <h3 class="card-title">Number of products added</h3>
                 </div>
                   <?php if($this->session->flashdata('add')){ ?>
@@ -16,26 +16,26 @@
                   <?php }?>
                 <table class="table">
                   <thead>
-                    <tr>
-                      <th scope="col">P ID</th>
-                      <th scope="col">Image</th>
-                      <th scope="col">Name</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Description</th>
+                    <tr class="row text-center">
+                      <th class="col-md-1" scope="col">P ID</th>
+                      <th class="col-md-2" scope="col">Image</th>
+                      <th class="col-md-2" scope="col">Name</th>
+                      <th class="col-md-1" scope="col">Price</th>
+                      <th class="col-md-3" scope="col">Description</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php if(!empty($product)){?>
                        <?php foreach($product as $p ){?>
-                        <tr>
-                          <th scope="row"><?php echo $p->pic_id; ?></th>
-                          <td><img src="<?php echo base_url(); ?>uploads/<?php echo $p->picture; ?>" width="75px;" /></td>
-                          <td><?php echo $p->productname; ?></td>
-                          <td>Rs. <?php echo $p->product_price; ?></td>
-                          <td><?php echo $p->product_detail; ?></td>
+                        <tr scope="row" class="row text-center">
+                          <th class="col-md-1"><?php echo $p->pic_id; ?></th>
+                          <td class="col-md-2"><img src="<?php echo base_url(); ?>uploads/<?php echo $p->pro_pic; ?>" width="75px;" /></td>
+                          <td class="col-md-2"><?php echo $p->pro_name; ?></td>
+                          <td class="col-md-1">C$. <?php echo $p->pro_price; ?></td>
+                          <td class="col-md-3"><?php echo $p->pro_details; ?></td>
 
-                          <td><a class="btn btn-info btn-sm" data-toggle="modal" data-target="#confirm-delete" data-href="<?php echo base_url(); ?>index.php/admin/productlist/delete/<?php echo $p->pic_id; ?>">Delete</a></td>
-                          <td><a class="btn btn-info btn-sm" href="<?php echo base_url(); ?>index.php/admin/productlist/edit/<?php echo $p->pic_id; ?>">Modify</a></td>
+                          <td class="col-md-1"><a class="btn btn-info btn-sm" data-toggle="modal" data-target="#confirm-delete" data-href="<?php echo base_url(); ?>index.php/admin/productlist/delete/<?php echo $p->pic_id; ?>">Delete</a></td>
+                          <td class="col-md-1"><a class="btn btn-info btn-sm" href="<?php echo base_url(); ?>index.php/admin/productlist/edit/<?php echo $p->pic_id; ?>">Modify</a></td>
                         </tr>
                        <?php } ?>
                       <?php } ?>

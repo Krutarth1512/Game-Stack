@@ -3,6 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Catalogue extends CI_Controller {
 
+    public function __construct()
+ {
+   parent::__construct();
+   $this->load->model('Mymodel');
+   $this->load->library('form_validation');
+   $this->load->library('session');
+ }
+
     /**
      * Index Page for this controller.
      *
@@ -20,6 +28,7 @@ class Catalogue extends CI_Controller {
      */
     public function index()
     {
-        $this->load->view('catalogue');
+        $data['products'] = $this->Mymodel->get_all_product();
+        $this->load->view('catalogue',$data);
     }
 }

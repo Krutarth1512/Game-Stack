@@ -73,7 +73,7 @@
                 <div class="card-body">
                   <div class="form-group-inline" id="general">
                     <div class="form-group row mb-3">
-                      <input class="form-control" type="text" placeholder="type">
+                      <input class="form-control" type="text" name="type" placeholder="type">
                     </div>
                     <div class="form-group row">
                       <label for="inputr" class="col-md-4 col-form-label">Edition</label>
@@ -127,7 +127,7 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputs" class="col-md-4 col-form-label">Vnameeo Preset</label>
+                      <label for="inputs" class="col-md-4 col-form-label">Video Preset</label>
                       <div class="col-sm-8">
                         <input type="text" class="form-control" name="mvideo" placeholder="">
                       </div>
@@ -166,7 +166,7 @@
                       </div>
                     </div>
                     <div class="form-group row">
-                      <label for="inputs" class="col-md-4 col-form-label">Vnameeo Preset</label>
+                      <label for="inputs" class="col-md-4 col-form-label">Video Preset</label>
                       <div class="col-sm-8">
                         <input type="text" class="form-control" name="rvideo" placeholder="">
                       </div>

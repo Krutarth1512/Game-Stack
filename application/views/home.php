@@ -10,7 +10,7 @@
             
             <div class="column">
                 
-                <a href="product1.html" style="text-decoration: none;">
+                <a href="<?php echo base_url();?>index.php/product_details" style="text-decoration: none;">
 
                     <img src="<?php echo base_url();?>assets/images/farcryHome.jpg" width="75%" title="Far Cry 5" class="center">
                     <h2 class="center">Far Cry 5</h2>
