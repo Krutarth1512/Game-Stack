@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Clogin extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -31,19 +31,19 @@ class Login extends CI_Controller {
 		if ($this->session->userdata('user_logged_in')) {
 			redirect('home');
 		}
-		$this->form_validation->set_rules('email','Email','valid_email|required');
-		$this->form_validation->set_rules('password','Password','required');
+		$this->form_validation->set_rules('cemail','Email','required');
+		$this->form_validation->set_rules('cpass','Password','required');
 		if ($this->form_validation->run() == false) {
-				$this->load->view('login');
+				$this->load->view('clogin');
 		}
 		else{
-			$username = $this->input->post('email');
-			$password = $this->input->post('password');
+			$username = $this->input->post('cemail');
+			$password = $this->input->post('cpass');
 			$user_info = $this->Main_model->get_current_username($username);
 			if (!empty($user_info)){
 				$data = array(
-				'u_email'=> $username,
-				'u_pass'=> $password
+				'cemail'=> $username,
+				'cpass'=> $password
 				);
 				$islogin = $this->Main_model->login_processes($data);
 				if (!empty($islogin)) {
@@ -55,13 +55,13 @@ class Login extends CI_Controller {
 						$this->session->set_userdata($sessiondata);
 				}
 				else{
-						redirect('login'.$this->session->set_flashdata('wrong_data','Wrong Password'));
+						redirect('clogin'.$this->session->set_flashdata('wrong_data','Wrong Password'));
 				}
 			}
 			else{
-			redirect('login'.$this->session->set_flashdata('no_email','No Account exists with this email'));
-			}
-			redirect('login');
+				redirect('clogin'.$this->session->set_flashdata('no_email','No Account exists with this email'));
+				}
+			redirect('home');
 		}
 	}
 	public function logout()
@@ -69,6 +69,6 @@ class Login extends CI_Controller {
 		if($this->session->userdata('user_logged_in')){
 			session_destroy();
 		}
-		redirect('login');
+		redirect('clogin');
 	}
 }

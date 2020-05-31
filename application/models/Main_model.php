@@ -25,8 +25,8 @@
     }
     public function login_processes($data)
     {
-      $this->db->where('u_email',$data['email']);
-      $this->db->where('u_pass',$data['password']);
+      $this->db->where('u_email',$data['ecmail']);
+      $this->db->where('u_pass',$data['cpass']);
       $query = $this->db->get('user');
       return $query->row();
     }

@@ -31,7 +31,8 @@
                         <li><a href="<?php echo base_url();?>index.php/compare">Compare</a></li>
                         <li><a href="<?php echo base_url();?>index.php/gallery">Gallery</a></li>
                         <li><a href="<?php echo base_url();?>index.php/contactUs">Contact</a></li>
-                        <li><a href="<?php echo base_url();?>index.php/login">Login</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/clogin">Login</a></li>
+                        <li><a href="<?php echo base_url(); ?>index.php/clogin/logout">Logout</a></li>
 						<li><a href="<?php echo base_url();?>index.php/cart">Bag</a></li>
                     </ul>
                 </div>
