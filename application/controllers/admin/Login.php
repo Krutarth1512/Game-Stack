@@ -46,7 +46,7 @@ public function __construct()
          else{
            redirect('admin/login'.$this->session->set_flashdata('no_email','No Account exists with this email'));
          }
-         redirect('admin/dashboard');
+         redirect('admin/product');
      }
  }
  public function logout()

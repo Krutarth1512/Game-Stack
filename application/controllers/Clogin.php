@@ -21,7 +21,7 @@ class Clogin extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('Main_model');
+		$this->load->model('Mymodel');
 		$this->load->library('form_validation');
 		$this->load->library('session');
 	}
@@ -31,21 +31,21 @@ class Clogin extends CI_Controller {
 		if ($this->session->userdata('user_logged_in')) {
 			redirect('home');
 		}
-		$this->form_validation->set_rules('cemail','Email','required');
-		$this->form_validation->set_rules('cpass','Password','required');
+		$this->form_validation->set_rules('email','Email','required');
+		$this->form_validation->set_rules('password','Password','required');
 		if ($this->form_validation->run() == false) {
-				$this->load->view('clogin');
+				$this->load->view('home');
 		}
 		else{
-			$username = $this->input->post('cemail');
-			$password = $this->input->post('cpass');
-			$user_info = $this->Main_model->get_current_username($username);
+			$username = $this->input->post('email');
+			$password = $this->input->post('password');
+			$user_info = $this->Mymodel->get_current_user_info_from_email($username);
 			if (!empty($user_info)){
 				$data = array(
-				'cemail'=> $username,
-				'cpass'=> $password
+				'cust_email'=> $username,
+				'cust_pass'=> $password
 				);
-				$islogin = $this->Main_model->login_processes($data);
+				$islogin = $this->Mymodel->login_process($data);
 				if (!empty($islogin)) {
 					$sessiondata = array(
 							'user_name' => $islogin->email,

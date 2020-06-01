@@ -3,6 +3,11 @@
         <div class="feature"></div>
 
         <div class="row">
+        <?php if($this->session->flashdata('add')){ ?>
+                <div class="alert alert-success">
+                  <?php echo $this->session->flashdata('add'); ?>
+                </div>
+              <?php }?>
 
             <div class="column-contact">
 
@@ -24,7 +29,7 @@
                             <input type="submit" class="submit-button" value="Register">
                         </div>
 
-						<h3><a href="login.html">Already have account</a></h3>
+						<h3><a href="<?php echo base_url();?>index.php/clogin">Already have account</a></h3>
 
                     </div>
 

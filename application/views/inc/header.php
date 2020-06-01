@@ -53,13 +53,13 @@
                         <li><a href="<?php echo base_url();?>index.php/compare">Compare</a></li>
                         <li><a href="<?php echo base_url();?>index.php/gallery">Gallery</a></li>
                         <li><a href="<?php echo base_url();?>index.php/contactUs">Contact</a></li>
-                        <!-- <li><a href="<?php echo base_url();?>index.php/clogin">Login</a></li>-->
+                        <!-- <li><a href="<?php echo base_url(); ?>index.php/admin/login/logout">Logout</a></li>-->
                         <li class="dropdown">
                             <a href="javascript:void(0)" class="dropbtn"><img src="<?php echo base_url();?>assets/images/person.png" width="20px" alt=""></a>
                             <div class="dropdown-content">
-                            <a href="#">Profile</a>
+                            <a href="<?php echo base_url();?>index.php/admin/login">Admin Panel</a>
                             <a href="<?php echo base_url();?>index.php/register">Sign Up</a>
-                            <a href="#">Logout</a>
+                            <a href="<?php echo base_url(); ?>index.php/clogin/logout">Logout</a>
                             </div>
                         </li>
 						<li><a href="<?php echo base_url();?>index.php/cart"><img src="<?php echo base_url();?>assets/images/cart.png" width="20px" alt=""></a></li>

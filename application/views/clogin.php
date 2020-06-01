@@ -31,22 +31,27 @@
 
         <div class="row">
 
-                <form method="post" action="<?php echo base_url(); ?>index.php/clogin">
+<?php  echo validation_errors(); ?>
+<?php if($this->session->flashdata('wrong_data')){?>
+<div class="alert alert-danger">
+<?php echo $this->session->flashdata('wrong_data');?>
+</div>
+<?php }?>
+<?php if($this->session->flashdata('no_email')){?>
+<div class="alert alert-danger">
+<?php echo $this->session->flashdata('no_email');?>
+</div>
+<?php }?>
 
-                <?php  echo validation_errors(); ?>
-                <?php if($this->session->flashdata('wrong_data')){?>
-                    <div class="alert alert-danger">
-                        <?php echo $this->session->flashdata('wrong_data');?>
-                    </div>
-                <?php }?>
+                <form method="post" action="<?php echo base_url(); ?>index.php/clogin">
 
                     <div class="box">
 					
 						<h1> Sign in </h1>
 
-                        <input type="email" name="cemail" required placeholder="Email" />
+                        <input type="email" name="email" placeholder="Email" />
 
-                        <input type="password" name="cpass" required placeholder="Password" />
+                        <input type="password" name="password" placeholder="Password" />
 
                         <div>
                             <input type="submit" class="submit-button" value="Login">

@@ -5,28 +5,28 @@ class Mymodel extends CI_Model {
 
   public function insert_data($data)
   {
-    $query = $this->db->insert('signup',$data);
+    $query = $this->db->insert('customer',$data);
     return $query;
   }
   public function get_all_users()
   {
-    $query= $this->db->get('signup');
+    $query= $this->db->get('customer');
     return $query->result();
   }
 
   public function delete_user($user_id){
     $this->db->where('user_id', $user_id);
-    $this->db->delete('signup');
+    $this->db->delete('customer');
   }
 
   public function user_details($user_id){
     $this->db->where('user_id', $user_id);
-    $query = $this->db->get('signup');
+    $query = $this->db->get('customer');
     return $query->row();
   }
   public function update_data($data,$user_id){
     $this->db->where('user_id', $user_id);
-    $query = $this->db->update('signup',$data);
+    $query = $this->db->update('customer',$data);
   }
   public function write_data($data){
     $que = $this->db->insert('members',$data);
@@ -34,14 +34,14 @@ class Mymodel extends CI_Model {
   }
   public function get_current_user_info_from_email($email)
   {
-    $this->db->where('email', $email);
-    $query = $this->db->get('signup');
+    $this->db->where('cust_email', $email);
+    $query = $this->db->get('customer');
     return $query->row();
   }
   public function login_process($data){
-    $this->db->where('email',$data['email']);
-    $this->db->where('password',$data['password']);
-    $query = $this->db->get('signup');
+    $this->db->where('cust_email',$data['cemail']);
+    $this->db->where('cust_pass',$data['cpass']);
+    $query = $this->db->get('customer');
     return $query->row();
   }
 
