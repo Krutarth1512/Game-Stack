@@ -34,7 +34,7 @@ class Clogin extends CI_Controller {
 		$this->form_validation->set_rules('email','Email','required');
 		$this->form_validation->set_rules('password','Password','required');
 		if ($this->form_validation->run() == false) {
-				$this->load->view('home');
+				$this->load->view('clogin');
 		}
 		else{
 			$username = $this->input->post('email');

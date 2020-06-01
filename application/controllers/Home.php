@@ -27,9 +27,9 @@ class Home extends CI_Controller {
      */
     public function index()
     {
-        // if(!$this->session->userdata('user_logged_in')){
-		// 	redirect('clogin');
-		// }
+         if(!$this->session->userdata('user_logged_in')){
+		 	redirect('clogin');
+		 }
             $this->load->view('home');
     
     }
