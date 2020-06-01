@@ -14,7 +14,7 @@ public function __construct()
 	public function index()
  {
      if ($this->session->userdata('user_logged_in')) {
-         redirect('admin/dashboard');
+         redirect('admin/product');
      }
      $this->form_validation->set_rules('email','Email','valid_email|required');
      $this->form_validation->set_rules('password','Password','required');
@@ -40,11 +40,11 @@ public function __construct()
                      $this->session->set_userdata($sessiondata);
                }
                else{
-                    redirect('login'.$this->session->set_flashdata('wrong_data','Wrong Password'));
+                    redirect('admin/login'.$this->session->set_flashdata('wrong_data','Wrong Password'));
                }
          }
          else{
-           redirect('login'.$this->session->set_flashdata('no_email','No Account exists with this email'));
+           redirect('admin/login'.$this->session->set_flashdata('no_email','No Account exists with this email'));
          }
          redirect('admin/dashboard');
      }
