@@ -10,7 +10,7 @@
             
             <div class="column">
                 
-                <a href="<?php echo base_url();?>index.php/product_details" style="text-decoration: none;">
+                <a href="<?php echo base_url();?>index.php/product1" style="text-decoration: none;">
 
                     <img src="<?php echo base_url();?>assets/images/farcryHome.jpg" width="75%" title="Far Cry 5" class="center">
                     <h2 class="center">Far Cry 5</h2>
@@ -23,7 +23,7 @@
             
             <div class="column">
 
-                <a href="product2.html" style="text-decoration: none;">
+                <a href="<?php echo base_url();?>index.php/product2" style="text-decoration: none;">
 
                     <img src="<?php echo base_url();?>assets/images/rainbowHome.jpg" width="75%" title="Rainbow Six Siege" class="center">
                     <h2 class="center">Tom Clancy's Rainbow Six Siege</h2>
@@ -36,7 +36,7 @@
 
             <div class="column">
 
-                <a href="product3.html" style="text-decoration: none;">
+                <a href="<?php echo base_url();?>index.php/product3" style="text-decoration: none;">
 
                     <img src="<?php echo base_url();?>assets/images/odysseyHome.jpg" width="75%" title="Assassin's Creed Odyssey" class="center">
                     <h2 class="center">Assassin's Creed Odyssey</h2>
