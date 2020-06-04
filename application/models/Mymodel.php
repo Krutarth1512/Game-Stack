@@ -39,8 +39,8 @@ class Mymodel extends CI_Model {
     return $query->row();
   }
   public function login_process($data){
-    $this->db->where('cust_email',$data['cemail']);
-    $this->db->where('cust_pass',$data['cpass']);
+    $this->db->where('cust_email',$data['email']);
+    $this->db->where('cust_pass',$data['password']);
     $query = $this->db->get('customer');
     return $query->row();
   }

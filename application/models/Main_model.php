@@ -17,19 +17,19 @@
       return $query->row();
     }
 
-    //login modal of client-side home page
-    public function get_current_username($email){
-      $this->db->where('u_email',$email);
-      $query = $this->db->get('user');
-      return $query->row();
-    }
-    public function login_processes($data)
-    {
-      $this->db->where('u_email',$data['ecmail']);
-      $this->db->where('u_pass',$data['cpass']);
-      $query = $this->db->get('user');
-      return $query->row();
-    }
+    // //login modal of client-side home page
+    // public function get_current_username($email){
+    //   $this->db->where('u_email',$email);
+    //   $query = $this->db->get('user');
+    //   return $query->row();
+    // }
+    // public function login_processes($data)
+    // {
+    //   $this->db->where('u_email',$data['ecmail']);
+    //   $this->db->where('u_pass',$data['cpass']);
+    //   $query = $this->db->get('user');
+    //   return $query->row();
+    // }
     //addition of product in view section
     public function get_all_product(){
       $query= $this->db->get('products');

@@ -57,7 +57,7 @@
                             <input type="submit" class="submit-button" value="Login">
                         </div>
 
-						<h3><a href="register.html">Create Account</a></h3>
+						<h3><a href="<?php echo base_url(); ?>index.php/register">Create Account</a></h3>
 
                     </div>
 
