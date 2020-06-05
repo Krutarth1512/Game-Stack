@@ -9,7 +9,7 @@
 
             <div class="columnProduct">
 
-                <img src="<?php echo base_url();?>assets/images/MetroHome.jpeg" width="70%" class="center">
+                <img src="<?php echo base_url();?>assets/images/MetroHome.jpg" width="70%" class="center">
                 <h1 class="center">Metro Exodus</h1>
                 <h3 class="center">Release Date : <font style="color: teal;"> 15 February 2019 </font></h3>
                 <h3 class="center">Type : <font style="color: teal;"> First-person shooter </font></h3>
