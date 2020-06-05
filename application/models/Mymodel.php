@@ -32,13 +32,13 @@ class Mymodel extends CI_Model {
     $que = $this->db->insert('members',$data);
     return $que;
   }
-  public function get_current_user_info_from_email($email)
+  public function get_customer_email($email)
   {
     $this->db->where('cust_email', $email);
     $query = $this->db->get('customer');
     return $query->row();
   }
-  public function login_process($data){
+  public function login_data($data){
     $this->db->where('cust_email',$data['email']);
     $this->db->where('cust_pass',$data['password']);
     $query = $this->db->get('customer');

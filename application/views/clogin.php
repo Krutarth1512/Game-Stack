@@ -34,7 +34,7 @@
 <?php  echo validation_errors(); ?>
 <?php if($this->session->flashdata('wrong_data')){?>
 <div class="alert alert-danger">
-<?php echo $this->session->flashdata('wrong_data');?>
+wrong password
 </div>
 <?php }?>
 <?php if($this->session->flashdata('no_email')){?>
