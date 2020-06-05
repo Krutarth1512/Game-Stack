@@ -17,6 +17,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo base_url(); ?>admin_assets/css/style.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>admin_assets/select2/css/bootstrap-select.css">
+  
+  <link rel="icon" href="<?php echo base_url();?>assets/icons/logo.png" type="image/png">
 
 </head>
 <body class="hold-transition sidebar-mini">

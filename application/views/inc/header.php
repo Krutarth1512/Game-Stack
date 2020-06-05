@@ -8,7 +8,6 @@
     <title>GameStack Canada | Best Games Selling Store</title>
     <link rel="icon" href="<?php echo base_url();?>assets/icons/logo.png" type="image/png">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/contact.css">
-    <link rel="icon" href="<?php echo base_url();?>assets/icons/logo.png" type="image/png">
     <link rel="stylesheet" href="<?php echo base_url();?>assets/css/main.css">
     
 
@@ -43,7 +42,7 @@
             <div class="header-inner">
                 <div class="logo">
                     <h1>
-                        <a href="<?php echo base_url();?>index.php/index">Game<span>Stack</span></a>
+                        <a href="<?php echo base_url();?>index.php/home">Game<span>Stack</span></a>
                     </h1>
                 </div>
                 <div class="top-nav">
