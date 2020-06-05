@@ -61,11 +61,16 @@ class Mymodel extends CI_Model {
     $this->db->delete('products');
   }
 
-  public function product_details($id){
-    $this->db->where('pic_id', $id);
-    $query = $this->db->get('products');
-    return $query->row();
-  }
+  // public function test($id) {
+  //   $query = $this->db->query('SELECT * FROM products WHERE pic_id = ' . $id);
+  //   return $query->result_array();
+  // }
+
+  // public function product_details($id){
+  //   $this->db->where('pic_id', $id);
+  //   $query = $this->db->get('products');
+  //   return $query->row();
+  // }
   public function update_product($data,$id){
     $this->db->where('pic_id', $id);
     $query = $this->db->update('products',$data);
