@@ -21,7 +21,7 @@
             <div class="header-inner">
                 <div class="logo">
                     <h1>
-                        <a href="<?php echo base_url();?>index.php/index">Game<span>Stack</span></a>
+                        <a href="<?php echo base_url();?>index.php/home">Game<span>Stack</span></a>
                     </h1>
                 </div>
             </div>

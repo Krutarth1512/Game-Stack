@@ -36,8 +36,8 @@ class Register extends CI_Controller {
 		else
 		{
 				$data=array(
-										'cust_email' =>$this->input->post('email'),
-										'cust_pass' => $this->input->post('password'),
+										'email' =>$this->input->post('email'),
+										'password' => $this->input->post('password'),
 										'cust_fname'=> $this->input->post('firstname'),
 										'cust_lname' =>$this->input->post('lastname'),
 				);

@@ -14,33 +14,33 @@ class Mymodel extends CI_Model {
     return $query->result();
   }
 
-  public function delete_user($user_id){
-    $this->db->where('user_id', $user_id);
-    $this->db->delete('customer');
-  }
+  // public function delete_user($user_id){
+  //   $this->db->where('user_id', $user_id);
+  //   $this->db->delete('customer');
+  // }
 
-  public function user_details($user_id){
-    $this->db->where('user_id', $user_id);
-    $query = $this->db->get('customer');
-    return $query->row();
-  }
-  public function update_data($data,$user_id){
-    $this->db->where('user_id', $user_id);
-    $query = $this->db->update('customer',$data);
-  }
-  public function write_data($data){
-    $que = $this->db->insert('members',$data);
-    return $que;
-  }
+  // public function user_details($user_id){
+  //   $this->db->where('user_id', $user_id);
+  //   $query = $this->db->get('customer');
+  //   return $query->row();
+  // }
+  // public function update_data($data,$user_id){
+  //   $this->db->where('user_id', $user_id);
+  //   $query = $this->db->update('customer',$data);
+  // }
+  // public function write_data($data){
+  //   $que = $this->db->insert('members',$data);
+  //   return $que;
+  // }
   public function get_customer_email($email)
   {
-    $this->db->where('cust_email', $email);
+    $this->db->where('email', $email);
     $query = $this->db->get('customer');
     return $query->row();
   }
   public function login_data($data){
-    $this->db->where('cust_email',$data['email']);
-    $this->db->where('cust_pass',$data['password']);
+    $this->db->where('email',$data['email']);
+    $this->db->where('password',$data['password']);
     $query = $this->db->get('customer');
     return $query->row();
   }
