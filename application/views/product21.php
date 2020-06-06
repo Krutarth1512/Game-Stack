@@ -2,7 +2,7 @@
         <div class="feature"></div>
 
         <div class="container">
-            <img src="<?php echo base_url();?>assets/images/MetroCover.jpg" alt="Metro Exodus" style="width:100%;">
+            <img src="<?php echo base_url();?>assets/images/metrocover.jpg" alt="Metro Exodus" style="width:100%;">
         </div>
 
         <div class="row">

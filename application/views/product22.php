@@ -3,7 +3,7 @@
         <div class="feature"></div>
 
         <div class="container">
-            <img src="<?php echo base_url();?>assets/images/ControlCover.jpg" alt="Control" style="width:100%;">
+            <img src="<?php echo base_url();?>assets/images/controlcover.jpg" alt="Control" style="width:100%;">
         </div>
 
         <div class="row">

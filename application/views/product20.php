@@ -3,7 +3,7 @@
         <div class="feature"></div>
 
         <div class="container">
-            <img src="<?php echo base_url();?>assets/images/LeagueCover.jpg" alt="League Of Legends" style="width:100%;">
+            <img src="<?php echo base_url();?>assets/images/leaguecover.jpg" alt="League Of Legends" style="width:100%;">
         </div>
 
         <div class="row">
